@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskLyn | AI RAG Assistant</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar for Knowledge Base -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-orb"></div>
+                <h1>AskLyn</h1>
+            </div>
+
+            <div class="upload-section">
+                <h3>Knowledge Base</h3>
+                <p>Feed Lyn new data to learn.</p>
+                <div class="file-drop-area" id="drop-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Drag & Drop files or Click</span>
+                    <input type="file" id="fileElem" multiple accept=".txt">
+                </div>
+                <div id="upload-status" class="status-msg"></div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="label">System Status</span>
+                    <span class="value online">ONLINE</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">RAG Engine</span>
+                    <span class="value active">ACTIVE</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-interface">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="avatar-container">
+                        <div class="avatar-ring"></div>
+                        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Lyn" alt="Lyn Avatar">
+                    </div>
+                    <div>
+                        <h2>Lyn</h2>
+                        <span class="status-text">AI Assistant Ready</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messages-container">
+                <!-- Welcome Message -->
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I am Lyn. I can answer questions based on the knowledge base you provide using
+                        Retrieval-Augmented Generation. How can I assist you today?
+                    </div>
+                    <div class="timestamp">Now</div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Ask Lyn anything..." autocomplete="off">
+                    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
