@@ -1,0 +1,25 @@
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background: green;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
